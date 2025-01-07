@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>The KISS Web Development Framework</title>   <!-- appears in browser tab -->
+  
+  <link rel="icon" href="favicon-96x96.png" type="image/png">
+
+  
+  <style>
+        .center-content {
+            width: 800px; /* Fixed width for the content */
+            margin: 0 auto; /* Centers the content with automatic margins */
+            padding: 20px; /* Adds padding inside the content for better readability */
+            box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+        }
+
+        /* Responsive adjustments for small screens */
+        @media (max-width: 640px) {
+            .center-content {
+                width: auto; /* Allows the content width to adjust */
+                margin: 0 20px; /* Sets a smaller margin on the sides for very small screens */
+                padding: 10px; /* Adjusts padding for smaller screens */
+            }
+        }	
+	pre {
+            background-color: #f5f5f5; /* Very light gray background */
+            margin-left: 20px; /* Left margin of 20 pixels */
+            padding: 10px; /* Adds padding inside the <pre> for better readability */
+            border-radius: 5px; /* Optional: adds rounded corners for a softer look */
+            /* Ensures the text aligns to the left within the <pre> element */
+            white-space: pre-wrap; /* Optional: ensures the text wraps and does not overflow the container */
+        }
+	body {
+            font-size: 20px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+            text-rendering: optimizeLegibility;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body class="center-content">
+
+
+<h1>The KISS Web Development Framework</h1>
+
+<h4>Blake McBride</h4>
+
+<img src="kiss-framework-featured.jpg">
+
+          <div class="field field--name-body field--type-text-with-summary field--label-hidden field--item"><p>Perhaps the most popular platform for applications is the web. There are many reasons for this including portability across platforms, no need to update the program, data backup, sharing data with others, and many more. This popularity has driven many of us to the platform.</p>
+
+<p>Unfortunately, the platform is a bit complex. Rather than developing in a particular environment, with web applications it is necessary to create two halves of a program utilizing vastly different technologies. On top of that, there are many additional challenges such as the communications and security between the two halves.</p>
+
+<p>A typical web application would include all of the following building blocks:</p>
+
+<ol><li>Front-end layout (HTML/CSS)</li>
+	<li>Front-end functionality (JavaScript)</li>
+	<li>Back-end server code (Java, C#, etc.)</li>
+	<li>Communications (REST, etc.)</li>
+	<li>Authentication</li>
+	<li>Data persistence (SQL, etc.)</li>
+</ol><p>All these don't even touch on all the other pieces that are not part of your application proper, such as the server (Apache, tomcat, etc), the database server (PostgreSQL, MySQL, MongoDB, etc), the OS (Linux, etc.), domain name, DNS, yadda, yadda, yadda.</p>
+
+<p>The tremendous complexity notwithstanding, most application developers mainly have to concern themselves with the six items listed above. These are their main concerns.</p>
+
+<p>Although there are many fine solutions available for these main concerns, in general, these solutions are siloed, complex, and incongruent. Let me explain.</p>
+
+<p>Many solutions are siloed because they are single-solution packages that are complete within themselves and disconnected from other pieces of the system.</p>
+
+<p>Some solutions are so complex that they can take years to learn well. Developers can struggle more with the framework they are using than the language or application they are trying to write. This is a major problem.</p>
+
+<p>Lastly, by incongruent I mean that the siloed tools do not naturally fit well together. A bunch of glue code has to be written, learned, and supported to fit the various pieces together. Each tool has a different feel, a different approach, a different way of thinking.</p>
+
+<p>Being frustrated with all of these problems, I wrote the KISS Web Development Framework. At first it was just various solutions I had developed. But later it evolved into a single, comprehensive web development framework. KISS, an open-source project, was specifically designed to solve these exact challenges.</p>
+
+<p>KISS is a single, comprehensive, fully integrated web development framework that includes integrated solutions for:</p>
+
+<p><strong>Front-end</strong></p>
+
+<ol><li>Custom HTML controls</li>
+	<li>Easy communications with the back-end with built-in authentication</li>
+	<li>Browser cache control (so the user never has to clear their cache)</li>
+	<li>A variety of general purpose utilities</li>
+</ol><p><strong>Back-end</strong></p>
+
+<ol><li>Easy communications with the back-end with built-in authentication</li>
+	<li>Easy to use SQL data persistence API</li>
+	<li>The REST services are thread-pooled, asynchronous, microservices</li>
+	<li>PDF report generation, CSV import/export, and a variety of other general-purpose utilities</li>
+</ol><p>The focus of KISS (its namesake) is to Keep It Simple.</p>
+
+<p>KISS is simple to learn, simple to use, and simple to support. I should add that there are a few commercial applications written with KISS so KISS is battle tested and ready for real applications.</p>
+
+<p>The KISS back-end is primarily built in Java. The front-end is straight HTML, CSS, and JavaScript. Keep it simple!</p>
+
+<p>KISS comes as a complete, running application with ample documentation. After downloading the source code onto your Linux, Mac, or Windows machine, KISS can be up and running in no more than four command lines. Those four lines will install all third-party libraries, and a web server will be installed and configured. Since KISS is built with microservices along with other techniques, both the back-end and the front-end of your application can be modified while the system is running. There is no need to bring the server down, build, deploy, and reboot the server.</p>
+
+<p>KISS has the following prerequisites:</p>
+
+<ol><li>JDK (Java Developer Kit) 8 or 11</li>
+	<li>GIT</li>
+</ol><p>Here are all the commands needed to download, configure, build, and run the initial KISS application on a Linux or Mac (it is assumed that you already have the JDK installed):</p>
+
+<pre>$ git clone https://github.com/blakemcbride/Kiss.git
+
+$ cd Kiss
+
+$ ./bld develop
+</pre>
+
+<p>On Windows, it would be:</p>
+
+<pre>&gt; git clone https://github.com/blakemcbride/Kiss.git
+
+&gt; cd Kiss
+
+&gt; build-builder
+
+&gt; bld develop
+</pre>
+
+<p>This process looks as follows:</p>
+<img alt="KISS Terminal" data-entity-type="file" data-entity-uuid="4c66a8f1-c17b-4fce-9664-d58a14265128" height="478" src="kiss-framework-1.jpg" width="850" class="align-center"><p>At this point the initial KISS application will be built and running. You can go to http://localhost:8000 with your browser to see the application. It looks as follows:</p>
+<img alt="KISS Browser Localhost" data-entity-type="file" data-entity-uuid="b4958ac8-2011-4574-9ea4-85225f02ae37" height="501" src="kiss-browser-localhost.jpg" width="850" class="align-center"><p>The initial User Name is "kiss", and the initial password is "password". Out-of-the-box KISS supports PostgreSQL, MySQL, Microsoft SQL Server, SQLite, and Oracle. As shipped, KISS is configured for and includes an SQLite database. It uses this to authenticate the default user.</p>
+
+<p>Once you login, the system looks as follows:</p>
+<img alt="KISS Login Screen" data-entity-type="file" data-entity-uuid="d65f3298-40b4-41bd-a487-9deb7aa03cbd" height="500" src="kiss-login-screen.jpg" width="850" class="align-center"><p>The buttons on the left exemplify various capabilities of the system.</p>
+
+<p><strong>Controls</strong> - demonstrates various HTML custom tags</p>
+
+<p><strong>REST Services</strong> - demonstrates REST calls</p>
+
+<p><strong>CRUD</strong> - demonstrates a sample create, read, update, and delete screen along with reporting and exporting</p>
+
+<p><strong>File Upload</strong> - demonstrates file upload capabilities</p>
+
+<p><strong>Logout</strong> - log out of the system</p>
+
+<p>Once KISS is running, you can debug the application with your favorite IDE by connecting to debug port 9000.</p>
+
+<p>One thing to be noted, KISS is not inextricably bound to the KISS front-end. KISS can and has been used with other front-end frameworks such as React, Angular, etc. It's easy.</p>
+
+<p>Again, because of the KISS design, you can add and change front-end or back-end code while it is running and the changes will take effect as soon as executed. Note that all code is completely compiled. There is no interpreted code. Everything runs at full speed.</p>
+
+<p>In addition to the documentation that comes with KISS, there is also a video training series on YouTube. Future articles will go into greater depth regarding the design decisions and use of the system.</p>
+
+<p><strong>Connect</strong></p>
+
+<p><strong>Main website</strong> - <a href="https://kissweb.org/">https://kissweb.org</a></p>
+
+<p><strong>KISS Source code</strong> &nbsp;- <a href="https://github.com/blakemcbride/Kiss">https://github.com/blakemcbride/Kiss</a></p>
+
+<p><strong>Discussion</strong> - <a href="https://github.com/blakemcbride/Kiss/discussions">https://github.com/blakemcbride/Kiss/discussions</a></p>
+
+<p><strong>Issue tracking</strong> - <a href="https://github.com/blakemcbride/Kiss/issues">https://github.com/blakemcbride/Kiss/issues</a></p></div>
+      
+<p style="font-size: medium;">Blake McBride is an enthusiastic software developer and philosopher.&nbsp; He has created development frameworks for DOS, Windows, and now the Web.</p>
+</div>
+      
+        
+  
+</body>
+
+</html>
