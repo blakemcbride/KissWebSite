@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>REST Microsevices</title>   <!-- appears in browser tab -->
+  
+  <link rel="icon" href="favicon-96x96.png" type="image/png">
+
+  
+  <style>
+        .center-content {
+            width: 800px; /* Fixed width for the content */
+            margin: 0 auto; /* Centers the content with automatic margins */
+            padding: 20px; /* Adds padding inside the content for better readability */
+            box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+        }
+
+        /* Responsive adjustments for small screens */
+        @media (max-width: 640px) {
+            .center-content {
+                width: auto; /* Allows the content width to adjust */
+                margin: 0 20px; /* Sets a smaller margin on the sides for very small screens */
+                padding: 10px; /* Adjusts padding for smaller screens */
+            }
+        }	
+	pre {
+            background-color: #f5f5f5; /* Very light gray background */
+            margin-left: 20px; /* Left margin of 20 pixels */
+            padding: 10px; /* Adds padding inside the <pre> for better readability */
+            border-radius: 5px; /* Optional: adds rounded corners for a softer look */
+            /* Ensures the text aligns to the left within the <pre> element */
+            white-space: pre-wrap; /* Optional: ensures the text wraps and does not overflow the container */
+        }
+	body {
+            font-size: 20px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            word-spacing: 1px;
+            text-rendering: optimizeLegibility;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body class="center-content">
+
+
+<h1>Developing REST Microservices Simply</h1>
+
+<h4>Blake McBride</h4>
+
+<img src="Kiss-logo.svg">
+
+<h2>Introduction</h2>
+
+I am the author of the open-source KISS Web Development Framework described at <a href="https://kissweb.org/">kissweb.org</a> It is based on Java on the back-end and standard HTML/JavaScript on the front-end. Being frustrated with the unecessary complexity and all of the pieces that have to be fit together in order to create a web application, I created KISS. KISS provides a one-stop shop for everything needed already fully integrated and running out-of-the-box.
+<p>
+KISS includes the front-end, back-end, REST communications, microservices, SQL API, custom HTML tags, authentication, browser cache control, and a lot more. KISS stands for Keep It Simple… To that end, KISS is designed to be as simple to get up and running, simple to learn, and simple to use. In fact, KISS can be downloaded, built, and running in about four command lines!
+<p>
+KISS runs on Linux, Mac, and Windows and is currently being used in a few commercial applications so it is a well-tested, solid framework.
+
+<h2>Microservices</h2>
+
+Each KISS REST microservice web method is implemented in a single Java method. So, if you have four microservices, you only need four Java methods. A “Hello World” microservice can be fully implemented with a single method containing a single line of code! There is no wiring or configuration. Since they are microservices, simply saving the source file adds the microservice to the system. KISS recognizes new or changed files and compiles them on the fly when they are called. All KISS microservices are fully compiled and run at full speed.
+<p>
+In addition to Java, KISS supports microservices written in <a href="http://www.groovy-lang.org/">Groovy</a> or Lisp as well. Groovy is basically a simplified and enhanced Java. Standard Java can run as Groovy code and Groovy simplifications and enhancements may be used as desired. Groovy code also gets compiled at runtime into regular JVM bytecode so it too runs at full speed.
+<p>
+Lisp support is provided by the <a href="https://abcl.org/">ABCL project</a>. It supports full <a href="https://lisp-lang.org/">Common Lisp</a> and compiles, on the fly, to JVM bytecode.
+<p>
+In KISS, each microservice is automatically available as a REST web service. No extra coding is needed! KISS REST web services are asynchronous and run in a defined thread pool so that large loads may be handled efficiently.
+<p>
+I am now going to show one hundred percent of the back-end and front-end code needed to define and use a KISS REST microservice.
+
+<h2>Example — The Back-end Part</h2>
+
+Here is a back-end REST microservice that takes in two numbers from the front-end and returns their sum.
+
+<pre>
+package services;
+
+import org.json.JSONObject;
+import org.kissweb.database.Connection;
+import org.kissweb.restServer.ProcessServlet;
+
+public class MyJavaService {
+
+    public void addNumbers(JSONObject injson, JSONObject outjson, Connection db, ProcessServlet servlet) {
+        int num1 = injson.getInt("num1");
+        int num2 = injson.getInt("num2");
+        outjson.put("num3", num1 + num2);
+    }
+}
+</pre>
+
+That is it. That is all of it. There is no other configuration needed. Except for the three lines inside the method, all of the rest is just boilerplate code. It is the exact same for every REST microservice.
+<p>
+“MyJavaService” is the name of the web service. “addNumbers” is the name of the web method within the web service. The method takes a JSON object that was sent from the front-end and returns a JSON object back to the front-end.
+<p>
+This method expects a JSON object that has two objects named “num1” and “num2”. It gets their integer value, adds them, and returns the sum to the front-end in a JSON object in an element named “num3”. That is all that is needed!
+<p>
+Input and output JSON can be arbitrarily complex or nested. Each web service may contain any number of web methods. Additionally, no error checking is needed. The framework handles errors automatically.
+
+<h2>Example — The Front-end Part</h2>
+
+Calling the back-end web service from the front-end is equally easy. Also, while the KISS front-end may be used, the KISS front-end is not required. This can and has been used with other front-end frameworks (like React) as well.
+<p>
+Here is all of the code needed to call the above web service from plain JavaScript:
+
+<pre>
+const data = {
+    num1: 62,
+    num2: 38
+};
+let res = await Server.call('services/MyJavaService', 'addNumbers', data);
+if (res._Success) {
+    whatever(res.num3);
+}
+</pre>
+
+Another way to call the same services is as follows:
+
+<pre>
+const data = {
+    num1: 62,
+    num2: 38
+};
+Server.call('services/MyJavaService', 'addNumbers', data).then(res => {
+    if (res._Success) {
+        whatever(res.num3);
+    }
+}
+</pre>
+
+The call to the back-end automatically handles errors. KISS also supports the ability to call multiple services at the same time, process each as they come in, and continue once they’ve all been processed.
+
+<h2>Concluding Remarks</h2>
+
+Since KISS web services are microservices, these services can be added, changed, or deleted on a running system. There is no need to bring the server down, rebuild, redeploy, and boot the server back up. The KISS system notices changes and re-compiles changes as needed. Imagine how much easier development is! Imagine being able to correct a bug in a production system without having to bring the system down and disrupt the entire organization!
+<p>
+Another aspect of KISS is authentication. Each of these web service calls is fully authenticated by the framework. You can always be sure of who is making the call and that they are authorized. Also, if you are using HTTPS, these calls are fully encrypted!
+<p>
+  
+KISS is designed to make building web applications as easy as
+possible. One piece of that system is shown above. KISS includes a lot
+more! KISS also comes with three manuals and even has a video tutorial
+series on <a href="https://www.youtube.com/watch?v=FAnL7dpMld4">YouTube</a>. Check it out!
+
+</body>
+
+</html>
