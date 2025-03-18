@@ -42,6 +42,38 @@
     <link href="css/freelancer.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon-96x96.png">
 
+    <style>
+      .header-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-container {
+      /* Keep the image centered on mobile */
+      flex: 1 1 auto;
+    }
+
+    .ollama-text {
+      color: #8B0000; /* deep red */
+      font-size: 2em; /* adjust as needed for "large" */
+      transform: rotate(45deg);
+      margin-left: 20px;
+      flex: 0 0 auto;
+    }
+
+    /* On small screens, stack the image and text */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      .ollama-text {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+    </style>
 </head>
 
 <body id="page-top">
@@ -90,20 +122,24 @@
 
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center">
-    <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="Kiss-logo.svg" alt="">
-        <h1 class="text-uppercase mb-0" style="font-size: 2em;">Kiss Java-based, Open Source, Full Stack, Web
-            Development Framework</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">
-            Build secure, robust, and fast web-based business applications that are quicker and easier to learn,
-            develop, support, and enhance.
-        </h2>
-        <div style="margin-top: 40px;">
-            <iframe src="https://github.com/sponsors/blakemcbride/button" title="Sponsor blakemcbride" height="32"
-                    width="114" style="border: 0; border-radius: 6px;"></iframe>
-        </div>
+  <div class="container header-container">
+    <div class="logo-container">
+      <img class="img-fluid mb-5 d-block mx-auto" src="Kiss-logo.svg" alt="">
     </div>
+    <div class="ollama-text">
+      Now Supports Ollama LLM!
+    </div>
+    <h1 class="text-uppercase mb-0" style="font-size: 2em;">Kiss Java-based, Open Source, Full Stack, Web Development Framework</h1>
+    <hr class="star-light">
+    <h2 class="font-weight-light mb-0">
+      Build secure, robust, and fast web-based business applications that are quicker and easier to learn,
+      develop, support, and enhance.
+    </h2>
+    <div style="margin-top: 40px;">
+      <iframe src="https://github.com/sponsors/blakemcbride/button" title="Sponsor blakemcbride" height="32"
+              width="114" style="border: 0; border-radius: 6px;"></iframe>
+    </div>
+  </div>
 </header>
 
 <!-- About Section ---------------------------------------------------------------------------------->
@@ -190,6 +226,7 @@
             <li>Alternate front-end frameworks such as React or AngularJS can be used in place of the Kiss front-end.
             </li>
             <li>Applications can be served with Linux, BSD, Microsoft, or Solaris servers.</li>
+	    <li>Add LLM technology to your application with Ollama server support.</li>
             <li>Use in conjunction with <a href="https://electronjs.org" target="_blank" class="text-white">Electron</a>
                 to build desktop applications that are portable between Windows, macOS, and Linux.
             <li>With all of these features, Kiss offers an unprecedented RAD environment offering shortened development
