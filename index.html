@@ -102,6 +102,10 @@
                 </li>
 
                 <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#integrations">Integrations</a>
+                </li>
+
+                <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#samples">Overview</a>
                 </li>
 
@@ -228,7 +232,6 @@
             <li>Alternate front-end frameworks such as React or AngularJS can be used in place of the Kiss front-end.
             </li>
             <li>Applications can be served with Linux, BSD, Microsoft, or Solaris servers.</li>
-	    <li>Add LLM technology to your application with Ollama server support.</li>
             <li>Use in conjunction with <a href="https://electronjs.org" target="_blank" class="text-white">Electron</a>
                 to build desktop applications that are portable between Windows, macOS, and Linux.
             <li>With all of these features, Kiss offers an unprecedented RAD environment offering shortened development
@@ -239,11 +242,34 @@
 </section>
 
 
-<!-- Samples Section ---------------------------------------------------------------------------------->
-<section class="mb-0" id="samples">
+<!-- Integrations Section ---------------------------------------------------------------------------------->
+<section class="mb-0" id="integrations">
     <div class="container">
-        <h2 class="text-center text-uppercase">Overview</h2>
+        <h2 class="text-center text-uppercase">Integrations</h2>
         <hr class="star-dark mb-5">
+
+        <h3>External Systems</h3>
+        <ul>
+            <li><strong>REST Client</strong> &mdash; make HTTP calls out to third-party APIs.</li>
+            <li><strong>REST Server</strong> &mdash; accept inbound HTTP calls from external systems and webhooks.</li>
+        </ul>
+
+        <br>
+        <h3>LLM</h3>
+        <ul>
+            <li><strong>LLM Providers</strong> &mdash; built-in support for OpenAI, Anthropic, and Ollama.</li>
+            <li><strong>MCP Server</strong> &mdash; expose application tools to AI assistants via the Model Context Protocol.</li>
+            <li><strong>Embeddings Database</strong> &mdash; vector storage for retrieval-augmented generation (RAG).</li>
+        </ul>
+    </div>
+</section>
+
+
+<!-- Samples Section ---------------------------------------------------------------------------------->
+<section class="bg-primary text-white" id="samples">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-white">Overview</h2>
+        <hr class="star-light mb-5">
 
         <h3>Sample Back-end Web Service</h3>
 
@@ -357,10 +383,10 @@ if (result._Success) {
 
 
 <!-- Quick Start Section ---------------------------------------------------------------------------------->
-<section class="bg-primary text-white" id="quick-start">
-    <div class="container text-white">
-        <h2 class="text-center text-uppercase text-white mb-0">Quick Start</h2>
-        <hr class="star-light mb-5">
+<section class="mb-0" id="quick-start">
+    <div class="container">
+        <h2 class="text-center text-uppercase mb-0">Quick Start</h2>
+        <hr class="star-dark mb-5">
         Presuming you have the Java JDK (tested with Java 17, 21, 25), GIT, and an Internet connection, you can run the following commands to download, install, configure, and run Kiss, tomcat, and the required JAR files:
         <br><br>
         Be sure the JAVA_HOME and JRE_HOME environment variables are set correctly!
@@ -385,37 +411,37 @@ bld -v develop
 
 
 <!-- Learn Section ---------------------------------------------------------------------------------->
-<section class="mb-0" id="learn">
+<section class="bg-primary text-white" id="learn">
     <div class="container">
-        <h2 class="text-center text-uppercase mb-0">Learn</h2>
-        <hr class="star-dark mb-5">
+        <h2 class="text-center text-uppercase text-white mb-0">Learn</h2>
+        <hr class="star-light mb-5">
         The following introductory videos are available:
         <ul>
-            <li><a href="https://youtu.be/FAnL7dpMld4" target="_blank"><u>Introduction</u></a></li>
-            <li><a href="https://youtu.be/xT-C-yQo0Ec" target="_blank"><u>Setup &amp;
+            <li><a href="https://youtu.be/FAnL7dpMld4" target="_blank" class="text-white"><u>Introduction</u></a></li>
+            <li><a href="https://youtu.be/xT-C-yQo0Ec" target="_blank" class="text-white"><u>Setup &amp;
                 Configuration</u></a></li>
-            <li><a href="https://youtu.be/9zRZcxMjoW0" target="_blank"><u>Web Services</u></a></li>
-            <li><a href="https://youtu.be/zMjrp-ft_Tc" target="_blank"><u>Front-end</u></a></li>
-            <li><a href="https://youtu.be/pS7DezhYpGo" target="_blank"><u>Data Persistence</u></a>
+            <li><a href="https://youtu.be/9zRZcxMjoW0" target="_blank" class="text-white"><u>Web Services</u></a></li>
+            <li><a href="https://youtu.be/zMjrp-ft_Tc" target="_blank" class="text-white"><u>Front-end</u></a></li>
+            <li><a href="https://youtu.be/pS7DezhYpGo" target="_blank" class="text-white"><u>Data Persistence</u></a>
             </li>
-            <li><a href="https://youtu.be/fGEzv7uuJCk" target="_blank"><u>Deployment</u></a></li>
+            <li><a href="https://youtu.be/fGEzv7uuJCk" target="_blank" class="text-white"><u>Deployment</u></a></li>
         </ul>
         <br>
-        <div><a href="https://blakemcbride.github.io/Kiss/manual/man/"><u>Kiss
+        <div><a href="https://blakemcbride.github.io/Kiss/manual/man/" class="text-white"><u>Kiss
             Getting Started Guide</u></a>
         </div>
-        <div><a href="https://blakemcbride.github.io/Kiss/manual/jsdoc/"><u>Kiss
+        <div><a href="https://blakemcbride.github.io/Kiss/manual/jsdoc/" class="text-white"><u>Kiss
             Front-end API</u></a>
         </div>
-        <div><a href="javadoc/index.html"><u>Kiss Back-end API</u></a></div>
-        <div><a href="https://a.co/d/03HomHAf" target="_blank"><u>Kiss: A Complete Guide to the Web Application Framework</u></a> (comprehensive book available on Amazon)
+        <div><a href="javadoc/index.html" class="text-white"><u>Kiss Back-end API</u></a></div>
+        <div><a href="https://a.co/d/03HomHAf" target="_blank" class="text-white"><u>Kiss: A Complete Guide to the Web Application Framework</u></a> (comprehensive book available on Amazon)
         </div>
         <br><br>
         <div>Articles about KISS:<br></div>
         <ul>
-            <li><a href="KISS-Framework/KISS-Framework.html"><u>The KISS Web Development
+            <li><a href="KISS-Framework/KISS-Framework.html" class="text-white"><u>The KISS Web Development
                 Framework</u></a></li>
-            <li><a href="REST-Services-Simply/REST-Microservices.html"><u>Developing REST
+            <li><a href="REST-Services-Simply/REST-Microservices.html" class="text-white"><u>Developing REST
                 Microservices Simply</u></a></li>
         </ul>
         <br><br>
@@ -423,34 +449,33 @@ bld -v develop
         <ul>
             <li>
                 <a href="https://www.alliancetek.com/blog/post/2025/01/02/simplify-web-development-with-kiss-framework.aspx"
-                   target="_blank"><u>AllianceTek</u></a></li>
+                   target="_blank" class="text-white"><u>AllianceTek</u></a></li>
             <li>
                 <a href="https://christianbaghai.medium.com/kiss-v2-0-the-comprehensive-java-based-full-stack-web-development-framework-ab7b9e2beebf"
-                   target="_blank"><u>Christian Baghai</u></a></li>
+                   target="_blank" class="text-white"><u>Christian Baghai</u></a></li>
             <li>
                 <a href="https://www.yarddiant.com/blog/web-development/kiss-web-development-framework-for-website-design-and-development.html"
-                   target="_blank"><u>yarddiant</u></a></li>
+                   target="_blank" class="text-white"><u>yarddiant</u></a></li>
         </ul>
     </div>
 </section>
 
 
 <!-- Support Section ---------------------------------------------------------------------------------->
-<section class="bg-primary text-white" id="support">
-    <div class="container text-white">
+<section class="mb-0" id="support">
+    <div class="container">
         <h2 class="text-center text-uppercase mb-0">Support</h2>
-        <hr class="star-light mb-5">
+        <hr class="star-dark mb-5">
 
 
-        Source code is at <a href="https://github.com/blakemcbride/Kiss" target="_blank" class="text-white"><u>GitHub</u></a>
+        Source code is at <a href="https://github.com/blakemcbride/Kiss" target="_blank"><u>GitHub</u></a>
         <br><br>
         <a href="https://github.com/blakemcbride/Kiss/discussions"
-                                                         target="_blank" class="text-white"><u>Public discussion and Support</u></a>
+                                                         target="_blank"><u>Public discussion and Support</u></a>
         <br><br>
-        <a href="https://github.com/blakemcbride/Kiss/issues" target="_blank" class="text-white"><u>Issue Tracking</u></a>
+        <a href="https://github.com/blakemcbride/Kiss/issues" target="_blank"><u>Issue Tracking</u></a>
         <br><br>
-        <a href="mailto:blake@mcbridemail.com" target="_blank"
-                                                                    class="text-white"><u>Commercial support</u></a>
+        <a href="mailto:blake@mcbridemail.com" target="_blank"><u>Commercial support</u></a>
 
 
         <!--
@@ -461,8 +486,10 @@ bld -v develop
        -->
 
         <div style="margin-top: 40px;">
-            <iframe src="https://github.com/sponsors/blakemcbride/button" title="Sponsor blakemcbride" height="32"
-                    width="114" style="border: 0; border-radius: 6px;"></iframe>
+            <a class="btn btn-primary" href="https://github.com/sponsors/blakemcbride"
+               target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-heart mr-2"></i>Sponsor
+            </a>
         </div>
 
     </div>
